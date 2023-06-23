@@ -1,0 +1,67 @@
+# String Datatype and its three types of implementation
+name:  Abhishek Bhattacharjee
+favorite_color:  "blue"
+job: 'Software Engineer'
+
+#bio: 
+#  Abhishek Bhattacharjee is a Software Engineer at Red Hat. 
+#He is a contributor to the ManageIQ project and is currently working on
+#integrating ManageIQ with OpenStack.
+
+# The above format is not a valid YAML format. The YAML parser 
+#will throw an error. The correct format is as follows:
+
+bio : |
+  Abhishek Bhattacharjee is a Software Engineer at Red Hat. 
+  He is a contributor to the ManageIQ project and is currently working on
+  integrating ManageIQ with OpenStack.
+
+# Write a single line in multiple lines
+message: >
+  This is a single line
+  written in multiple lines
+  using the '>' character 
+
+# same as
+message: "This is a single line written in multiple lines using the '>' character"  
+
+number: 432
+marks: 98.5
+booleanValue: false #n, N, false, False, FALSE
+#same for true --> y, Y, true, True, TRUE
+
+#YAML right now will identify the above data type by itself.
+
+#Specify the type of data
+zero: !!int 0
+positiveNumber: !!int 55
+negativeNumber: !!int -55
+floatNumber: !!float 55.5
+booleanValue: !!bool true
+binaryVlaue: !!binary ob11010
+octalValue: !!int 0o777
+hexValue: !!int 0xFF
+comma Value: !!int 1,000,000
+expo Value: 6.23E56
+
+#Floating point Numbers
+floatNumber: !!float 55.5
+infinity: !!float .inf
+negativeInfinity: !!float -.inf
+not a num: .nan
+booleanValue: !!bool true
+stringmessage: !!str This is a string
+
+
+#null
+surname: !!null null # or null NULL ~
+~: this is a null key
+
+#dates and times
+date: 2017-01-01
+time: 12:00:00
+datetime: 2017-01-01T12:00:00 # No timezone specified
+datetime: 2017-01-01T12:00:00Z # Assuming UTC timezone
+datetime: 2017-01-01T12:00:00+05:30 # Assuming IST timezone
+
+
