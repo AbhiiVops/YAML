@@ -1,0 +1,28 @@
+"apple" : "I am a red fruit"  
+1 : "I am a number"
+"banana" : "I am a yellow fruit"
+
+--- # this is a separator
+
+#lists
+- apple
+- banana
+- orange
+- Apple # case sensitive , so this is different from apple
+
+--- # this is a separator
+
+cities:
+ - Mumbai
+ - Delhi
+ - Bangalore
+
+---
+cities : [Mumbai, Delhi, Bangalore] # This is same as above and is called inline notation
+
+---
+{mango: "Yellow fruit", orange: "Orange fruit", age:55}  # This is called flow notation
+
+... # This means that the yaml file ends here
+
+ # Indentation is important in yaml
