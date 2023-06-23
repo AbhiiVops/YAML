@@ -1,0 +1,106 @@
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+ #like this also
+ cities: !!seq [Mumbai, Delhi, Bangalore] #OR
+ cities: [Mumbai, Delhi, Bangalore]
+
+ #some of the keys of the seq will be empty
+ #This is called sparse sequence
+  sparse seq: 
+    - marks
+    - 
+    - roll_no
+    - null
+  
+  #nested sequence
+  -
+ - Apple
+ - banana
+ - orange
+-
+ - Abhishek
+ - Dipika
+ - Anuradha
+
+# key: value pairs are called maps
+!!map
+
+#nestes mappings: map within an map
+name: Abhishek Bhattacharjee
+role: 
+  age: 55
+  job: Software Engineer
+  company: Red Hat
+  location: Bangalore
+  hobbies: 
+    - reading
+    - writing
+    - travelling
+    - playing
+
+#same as
+name: Abhishek Bhattacharjee
+role: {age: 55, job: Software Engineer, company: Red Hat, location: Bangalore, hobbies: [reading, writing, travelling, playing]    
+
+# Sometimes we want to have multiple values for the same key
+# This is called pairs
+
+pairs example: !!pairs
+ - job: 
+    - Software Engineer
+    - Teacher
+  # OR
+  - job: [Software Engineer, Teacher] # This will be an array of hashtables  
+  # OR  
+  - job : Software Engineer
+  - job : Teacher
+  # OR
+  pair example: !!pairs [job:Software Engineer, job: Teacher]
+
+  # !!set will allow only unique values
+  names : !!set
+    ? Abhishek
+    ? Dipika
+    ? Anuradha
+  # It cannot have same values  
+
+# dictionary !!omap
+people: !!omap
+  - Abhishek:
+    - age: 55
+    - job: Software Engineer
+  - Dipika:
+    - age: 50
+    - job: Teacher
+  - Anuradha:
+    - age: 25
+    - job: Student
+
+
+#reusing some properties using anchors
+likings: &likes
+  fav fruit: mango
+  dislikes : grapes
+
+person1:
+   name: Abhishek
+    <<: *likes
+    dislikes: banana
+
+#this will be same as
+person1:
+   name: Abhishek
+    fav fruit: mango
+    dislikes : banana  #overwrites the dislikes from the anchor    
+
+person2:   
+   name: Dipika
+    <<: *likes
+
+person3:   
+   name: Anuradha
+    <<: *likes
+
