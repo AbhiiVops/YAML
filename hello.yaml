@@ -1,8 +1,8 @@
 "apple" : "I am a red fruit"  
 1 : "I am a number"
-"banana" : "I am a yellow fruit"
+'banana' : 'I am a yellow fruit'
 
---- # this is a separator
+--- # this is a separator in yaml
 
 #lists
 - apple
@@ -21,7 +21,7 @@ cities:
 cities : [Mumbai, Delhi, Bangalore] # This is same as above and is called inline notation
 
 ---
-{mango: "Yellow fruit", orange: "Orange fruit", age:55}  # This is called flow notation
+{mango: "Yellow fruit", orange: "Orange fruit", age: 55}  # This is called flow notation
 
 ... # This means that the yaml file ends here
 

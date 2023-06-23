@@ -3,9 +3,10 @@ student: !!seq
  - name
  - roll_no
 
+
  #like this also
  cities: !!seq [Mumbai, Delhi, Bangalore] #OR
- cities: [Mumbai, Delhi, Bangalore]
+ cities: [Mumbai, Delhi, Bangalore] # Inline notation
 
  #some of the keys of the seq will be empty
  #This is called sparse sequence
@@ -16,7 +17,7 @@ student: !!seq
     - null
   
   #nested sequence
-  -
+-
  - Apple
  - banana
  - orange
@@ -28,7 +29,7 @@ student: !!seq
 # key: value pairs are called maps
 !!map
 
-#nestes mappings: map within an map
+#nested mappings: map within an map
 name: Abhishek Bhattacharjee
 role: 
   age: 55
@@ -67,6 +68,9 @@ pairs example: !!pairs
     ? Anuradha
   # It cannot have same values  
 
+  # what does ? means above !
+  # It mean it has null values as of now
+
 # dictionary !!omap
 people: !!omap
   - Abhishek:
@@ -88,7 +92,7 @@ likings: &likes
 person1:
    name: Abhishek
     <<: *likes
-    dislikes: banana
+    dislikes: banana # Overriding the dislikes value here from likings
 
 #this will be same as
 person1:

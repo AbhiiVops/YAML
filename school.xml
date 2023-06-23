@@ -6,7 +6,7 @@
 
  <Students>
     
-     <Student
+     <Student>
 
 
     <rno>1</rno>
@@ -16,7 +16,7 @@
 
      </Student>
 
-    </Student>
+    </Students>
     
 
 </school>

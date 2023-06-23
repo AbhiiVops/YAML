@@ -4,14 +4,16 @@ favorite_color:  "blue"
 job: 'Software Engineer'
 
 #bio: 
-#  Abhishek Bhattacharjee is a Software Engineer at Red Hat. 
+#Abhishek Bhattacharjee is a Software Engineer at Red Hat. 
 #He is a contributor to the ManageIQ project and is currently working on
 #integrating ManageIQ with OpenStack.
 
-# The above format is not a valid YAML format. The YAML parser 
+#The above format is not a valid YAML format. The YAML parser 
 #will throw an error. The correct format is as follows:
 
-bio : |
+# It will throw error only if we start writing Abhishek directly below the bio: without using |
+
+bio : | # the '|' character is used to specify a block of text
   Abhishek Bhattacharjee is a Software Engineer at Red Hat. 
   He is a contributor to the ManageIQ project and is currently working on
   integrating ManageIQ with OpenStack.
@@ -32,17 +34,23 @@ booleanValue: false #n, N, false, False, FALSE
 
 #YAML right now will identify the above data type by itself.
 
-#Specify the type of data
+#Now Specifying the type of data
+# Syntax --> Variable name: !!datatype value
 zero: !!int 0
 positiveNumber: !!int 55
 negativeNumber: !!int -55
 floatNumber: !!float 55.5
 booleanValue: !!bool true
-binaryVlaue: !!binary ob11010
+binaryValue: !!binary ob11010
 octalValue: !!int 0o777
 hexValue: !!int 0xFF
 comma Value: !!int 1,000,000
 expo Value: 6.23E56
+
+# What does 6.23E56 mean?
+# 6.23 * 10^560
+
+# the key can be written with spaces and special characters
 
 #Floating point Numbers
 floatNumber: !!float 55.5
@@ -52,10 +60,21 @@ not a num: .nan
 booleanValue: !!bool true
 stringmessage: !!str This is a string
 
+#What does .inf mean 
+# It means infinity
+
+#What does .nan mean 
+# It means not a number
+
 
 #null
-surname: !!null null # or null NULL ~
+surname: !!null null # or null, NULL, ~ (tilde)
 ~: this is a null key
+# Usage of Null key with example
+# Suppose we have a list of students and their marks in a subject
+# and we want to represent the marks of a student who was absent
+# in the exam. We can use the null key to represent that.
+
 
 #dates and times
 date: 2017-01-01

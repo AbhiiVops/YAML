@@ -2,6 +2,7 @@ School:
   - name: DPS
     principal: Someone
     Students:
-    - rno: 12
-      name: Abhishek
-      marks: 98.5
+     - Student1:
+       - rno: 12
+         name: Abhishek
+         marks: 98.5
