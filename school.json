@@ -1,0 +1,25 @@
+{
+    "School" : [
+        {
+            "name" : "School 1",
+            "address" : "Address 1",
+            "Students": [
+                {
+                    "name" : "Student 1",
+                    "age" : 10,
+                    "class" : "Class 1"
+                },
+                {
+                    "name" : "Student 2",
+                    "age" : 11,
+                    "class" : "Class 2"
+                }
+            ]
+
+        }
+    ]
+}
+
+{}  Represents an empty object in JSON
+[]  Represents an empty array in JSON
+
